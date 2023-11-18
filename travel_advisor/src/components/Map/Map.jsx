@@ -1,8 +1,8 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
-import { LocationOnOutlinedIcon } from ' @material-ui/icons/LocationOnOutlined';
-
+import { IoLocationSharp } from "react-icons/io5";
+import Rating from '@mui/material/Rating';
 import useStyles from './styles';
 import { GoogleMap } from '@react-google-maps/api';
 
@@ -35,7 +35,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
                     >
                         {
                             !isDesktop ? (
-                                <LocationOnOutlinedIcon color='primary' fronstSize='large' />
+                                <IoLocationSharp color='primary' fronstSize='large' />
                             ) : (
                                 <Paper elevation={3} className={classes.paper}>
                                     <Typography className={classes.typography} variant="subtitle2" gutterBottom>
@@ -46,6 +46,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
                                         src={place.photo ? place.photo.images.large.url : 'https://ww.foodserivesandhospitality.come/wp-content/uploads/2016/09/restaurant-Placeholder-001.jpg'}
                                         alt={place.name}
                                     />
+                                    <Rating size='small' value={Number(place.rating)} readOnly />
                                 </Paper>
                             )
                         }
