@@ -19,7 +19,7 @@ useEffect(() => {
             {isLoading? (
                 <div className={classes.loading}>
                     <CircularProgress size="5rem" />
-                </div>
+        </div>
             ) : (
                 <>
             <FormControl className={classes.formControl}>
